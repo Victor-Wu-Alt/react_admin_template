@@ -1,0 +1,78 @@
+.login-wrap {
+  background-color: #fbfcff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; //子元素水平居中
+  align-items: center;
+
+  .top {
+    width: 100vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    img {
+      float: right;
+    }
+  }
+
+  .main {
+    border: 2px solid #e2e4e7;
+    border-radius: 20px;
+    padding: 20px;
+    height: 70%;
+    width: 1120px;
+    box-shadow: 2px 2px 2px 1px #a8a8a8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
+    .left {
+      width: 50%;
+    }
+
+    .right {
+      flex: 1;
+      margin-left: 70px;
+
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      h1, h2, p {
+        text-align: left;
+        margin: 5px 0;
+      }
+
+      .login-button {
+        margin-top: 15px;
+        width: 100%;
+        height: 50px;
+        //line-height: 50px;
+        border-radius: 25px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .bottom {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    img {
+      float: left;
+    }
+  }
+}
