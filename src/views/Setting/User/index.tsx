@@ -4,6 +4,7 @@ import {Button} from 'antd'
 const User:React.FC=()=>(
     <>
         <Button>User</Button>
+        <p className='red'>红色</p>
     </>
 )
 

@@ -2,17 +2,20 @@ import React from 'react';
 import './index.scss'
 import {Button, Form, Input} from 'antd';
 import {useNavigate} from "react-router-dom";
+import {getUserInfo} from "@/api/user.ts";
 
 const Login: React.FC = () => {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const [form] = Form.useForm();
     const formLayout = 'vertical'
     const formItemLayout =
         formLayout === 'vertical' ? {labelCol: {span: 5}, wrapperCol: {span: 19}} : null;
 
-    const onFinish = (values: any) => {
+    const onFinish = async (values: any) => {
+        let res: any = await getUserInfo()
+        if (!res) return
         console.log('Success:', values);
-        localStorage.setItem('token','dasdssdasd$%$$%#%^$#^%#%$$&^%%**sadasdad')
+        localStorage.setItem('token', res.token)
         navigate('/dashboard')
     };
 

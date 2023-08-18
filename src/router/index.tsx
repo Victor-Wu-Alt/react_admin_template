@@ -3,8 +3,9 @@ import LayoutRoute from "@/components/layout.tsx";
 import {lazy} from "react";
 import {FormOutlined, HomeOutlined, SettingOutlined, TableOutlined} from '@ant-design/icons'
 import Login from '@/views/Login'
+import Dashboard from "@/views/Dashboard";
 
-const Dashboard = lazy(() => import('@/views/Dashboard'))
+// const Dashboard = lazy(() => import('@/views/Dashboard'))
 const FormDisabledDemo = lazy(() => import('@/views/Form'))
 const User = lazy(() => import('@/views/Setting/User'))
 const TableDemo=lazy(()=>import('@/views/Table'))

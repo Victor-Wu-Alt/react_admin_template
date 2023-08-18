@@ -3,7 +3,8 @@ import {Avatar, Button, Col, Dropdown, MenuProps, Row, Space, Input} from "antd"
 import {SkinOutlined} from "@ant-design/icons";
 import useGlobalStore from "@/store/global.ts";
 import {useNavigate} from "react-router-dom";
-import debounce from "@/hooks/useDebounce.ts";
+import debounce from "@/utils/debounce.ts";
+import  '@/styles/header.scss'
 
 const HeaderComp: React.FC = () => {
     const {setColor, primaryColor} = useGlobalStore();
@@ -32,18 +33,19 @@ const HeaderComp: React.FC = () => {
         <Row justify="end" align="middle">
             <Col>
                 <Space size={20}>
-                    <div>
+                    <div className='skin'>
                         <Button type="primary" shape="circle" icon={<SkinOutlined/>}/>
                         <Input
                             type="color"
                             defaultValue={primaryColor}
+                            className='skin_input'
                             onChange={debounce(changeMainColor, 500)}
                         ></Input>
                     </div>
                     <Dropdown menu={{items}} placement="bottomRight">
                         <Avatar
                             src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"
-                            style={{cursor: "pointer"}}
+                            style={{cursor: "pointer",marginTop:'-5px'}}
                         />
                     </Dropdown>
                 </Space>

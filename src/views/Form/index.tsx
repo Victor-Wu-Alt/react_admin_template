@@ -30,7 +30,7 @@ const FormDisabledDemo: React.FC = () => {
     const [componentDisabled, setComponentDisabled] = useState<boolean>(true);
 
     return (
-        <>
+        <div>
             <Checkbox
                 checked={componentDisabled}
                 onChange={(e) => setComponentDisabled(e.target.checked)}
@@ -114,7 +114,7 @@ const FormDisabledDemo: React.FC = () => {
                     <Slider />
                 </Form.Item>
             </Form>
-        </>
+        </div>
     );
 };
 

@@ -4,6 +4,7 @@ import {ConfigProvider} from "antd";
 import routes from './router'
 import {useRoutes} from 'react-router-dom'
 import useGlobalStore from "@/store/global.ts";
+import './mock/mock.ts'
 
 function App() {
     const {primaryColor} = useGlobalStore();

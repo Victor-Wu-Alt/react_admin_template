@@ -18,7 +18,7 @@ type RouteType = {
 const LayoutRoute: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
     const navigate = useNavigate();
-    const { pathname } = useLocation();
+    const {pathname} = useLocation();
     const {
         token: {colorBgContainer},
     } = theme.useToken();
@@ -46,7 +46,7 @@ const LayoutRoute: React.FC = () => {
     const onMenuClick: MenuProps["onClick"] = ({key}) => {
         navigate(key);
     };
-
+   //如果没登录 跳到登录页
     const isAuth = localStorage.getItem('token')
     if (!isAuth) {
         return <Navigate to="/login" replace={true}/>;
@@ -95,10 +95,8 @@ const LayoutRoute: React.FC = () => {
                 </Header>
                 <Content
                     style={{
-                        margin: '24px 16px',
-                        padding: 24,
+                        margin: '15px',
                         height: 'calc(100vh - 112px)',
-                        background: colorBgContainer,
                     }}
                 >
                     <Suspense fallback={<Spin size="large" className="content_spin"/>}>
