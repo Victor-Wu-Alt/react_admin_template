@@ -1,9 +1,9 @@
-import React, {useEffect, useRef} from 'react';
-import  echarts from '@/utils/echarts.ts'
-import {EChartOption, ECharts} from 'echarts';
+import React, { useEffect, useRef } from 'react'
+import echarts from '@/utils/echarts.ts'
+import { EChartOption, ECharts } from 'echarts'
 
 interface PieChartProps {
-    data: Array<{ name: string; value: number }>;
+    data: Array<{ name: string; value: number }>
 }
 
 const PieChart: React.FC<PieChartProps> = ({data}) => {
@@ -16,28 +16,23 @@ const PieChart: React.FC<PieChartProps> = ({data}) => {
             chartInstance.current = echarts.init(chartRef.current);
         }
 
-
         const options: EChartOption = {
-            title: {
-                text: 'Pie Chart',
-                // @ts-ignore
-                x: 'center' as const, // Cast the type to a known value
+            grid:{
+                left:'0%',
+                right :'0',
+                top :'0%',
+                containLabel:false
             },
             tooltip: {
                 trigger: 'item',
                 formatter: '{a} <br/>{b}: {c} ({d}%)',
             },
-            // legend: {
-            //     orient: 'vertical',
-            //     left: 'left',
-            //     data: data.map(item => item.name),
-            // },
             series: [
                 {
                     name: 'Data',
                     type: 'pie',
-                    radius: '50%',
-                    center: ['50%', '60%'],
+                    radius: '60%',
+                    center: ['50%', '32%'],
                     data: data,
                     emphasis: {
                         itemStyle: {
@@ -73,7 +68,7 @@ const PieChart: React.FC<PieChartProps> = ({data}) => {
         };
     }, [data]);
 
-    return <div ref={chartRef} style={{width: '300px', height: '200px'}}/>;
+    return <div ref={chartRef} style={{width: '100%', height: '200px'}}/>;
 };
 
 export default PieChart;

@@ -1,11 +1,24 @@
-.dashboard_wrap{
-  .top{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    background-color: #fff;
-    border:1px solid #ccc;
-    border-radius: 4px;
-    box-shadow:#999 0 0 5px
-  }
+.dashboard_wrap {
+    .ant-card-body {
+        height: 170px;
+    }
+    .top {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: #999 0 0 5px;
+    }
+    .content {
+        display: flex;
+        margin-top: 15px;
+        .right {
+            width: 50%;
+        }
+        .left {
+            flex: 1;
+        }
+    }
 }
