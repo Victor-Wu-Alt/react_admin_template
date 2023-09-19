@@ -1,13 +1,13 @@
-import React from 'react';
-import {Space, Table, Tag} from 'antd';
-import type {ColumnsType} from 'antd/es/table';
+import React from 'react'
+import { Space, Table, Tag } from 'antd'
+import type { ColumnsType } from 'antd/es/table'
 
 interface DataType {
-    key: string;
-    name: string;
-    age: number;
-    address: string;
-    tags: string[];
+    key: string
+    name: string
+    age: number
+    address: string
+    tags: string[]
 }
 
 const columns: ColumnsType<DataType> = [
@@ -34,15 +34,15 @@ const columns: ColumnsType<DataType> = [
         render: (_, { tags }) => (
             <>
                 {tags.map((tag) => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
+                    let color = tag.length > 5 ? 'geekblue' : 'green'
                     if (tag === 'loser') {
-                        color = 'volcano';
+                        color = 'volcano'
                     }
                     return (
                         <Tag color={color} key={tag}>
                             {tag.toUpperCase()}
                         </Tag>
-                    );
+                    )
                 })}
             </>
         ),
@@ -51,13 +51,13 @@ const columns: ColumnsType<DataType> = [
         title: 'Action',
         key: 'action',
         render: (_, record) => (
-            <Space size="middle">
+            <Space size='middle'>
                 <a>Invite {record.name}</a>
                 <a>Delete</a>
             </Space>
         ),
     },
-];
+]
 
 const data: DataType[] = [
     {
@@ -81,8 +81,8 @@ const data: DataType[] = [
         address: 'Sydney No. 1 Lake Park',
         tags: ['cool', 'teacher'],
     },
-];
+]
 
-const TableDemo: React.FC = () => <Table columns={columns} dataSource={data} />;
+const TableDemo: React.FC = () => <Table columns={columns} dataSource={data} />
 
-export default TableDemo;
+export default TableDemo
